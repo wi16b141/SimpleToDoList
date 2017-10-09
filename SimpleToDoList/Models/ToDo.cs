@@ -8,14 +8,27 @@ namespace SimpleToDoList.Models
 {
     public class ToDo
     {
-        public string Description { get; set; }
-        public bool isDone { get; set; }
+        private string description;
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
+        }
+
+        private bool isDone;
+        public bool IsDone
+        {
+            get { return isDone; }
+            set { isDone = value; }
+        }
 
         public ToDo(string description, bool isDone)
         {
-            Description = description;
+            this.description = description;
             this.isDone = isDone;
         }
+
+        
 
     }
 }

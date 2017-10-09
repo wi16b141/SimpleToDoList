@@ -11,6 +11,7 @@
     <Window.DataContext>
         <ViewModels:MainViewModel/>
     </Window.DataContext>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -19,13 +20,14 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="center">
             <Label Content="ToDo" VerticalAlignment="center" Margin="10,0" />
-            <TextBox Width="200" BorderBrush="black" BorderThickness="1" VerticalAlignment="center" Text="{Binding newTaskDescription}" />
+            <TextBox Width="200" BorderBrush="black" BorderThickness="1" VerticalAlignment="center" Text="{Binding NewTaskDescription}" />
             <Button Content="Add" VerticalAlignment="Center" Margin="10,0" />
         </StackPanel>
 
-        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding toDoList}">
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding ToDoList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Description"/>
+                <DataGridTextColumn Binding="{Binding Description}" ClipboardContentBinding="{x:Null}" Header="Description"/>
+                <DataGridCheckBoxColumn Header="Done" Binding="{Binding Done}"/>
             </DataGrid.Columns>
 
         </DataGrid>
