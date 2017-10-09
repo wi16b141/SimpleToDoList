@@ -21,7 +21,7 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="center">
             <Label Content="ToDo" VerticalAlignment="center" Margin="10,0" />
             <TextBox Width="200" BorderBrush="black" BorderThickness="1" VerticalAlignment="center" Text="{Binding NewTaskDescription}" />
-            <Button Content="Add" VerticalAlignment="Center" Margin="10,0" />
+            <Button Content="Add" Command="{Binding AddBtnClickedCommand}"  VerticalAlignment="Center" Margin="10,0" />
         </StackPanel>
 
         <DataGrid Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding ToDoList}">
